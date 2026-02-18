@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Country and Capital Selector</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 30px;
+        }
+
+        select {
+            padding: 8px;
+            font-size: 16px;
+        }
+
+        #capital {
+            color: darkgreen;
+            font-weight: bold;
+            font-size: 22px;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Select a Country</h2>
+
+    <select id="countrySelect" onchange="showCapital()">
+        <option value="">--Choose a country--</option>
+        <option value="New Delhi">India</option>
+        <option value="Tokyo">Japan</option>
+        <option value="Harare">Zimbabwe</option>
+        <option value="Washington, D.C.">United States</option>
+        <option value="Berlin">Germany</option>
+    </select>
+
+    <div id="capital"></div>
+
+    <script>
+        function showCapital() {
+            var select = document.getElementById("countrySelect");
+            var capital = select.value;
+            var capitalDiv = document.getElementById("capital");
+
+            if (capital === "") {
+                capitalDiv.textContent = "";
+            } else {
+                capitalDiv.textContent = "Capital: " + capital;
+            }
+        }
+    </script>
+
+</body>
+</html>
